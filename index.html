@@ -10,6 +10,84 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
+    /* ===== NAVIGATION BAR ===== */
+nav {
+  font-family: 'Montserrat', sans-serif;
+letter-spacing: 0.3px;
+  background-color: #2B364A;
+  padding: 0.6rem 0;
+  text-align: center;
+  border-bottom: 2px solid #53667F;
+}
+
+.navbar {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  gap: 1.5rem;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  transition: background 0.2s ease;
+}
+
+.navbar a:hover {
+  background-color: #53667F;
+  border-radius: 6px;
+}
+
+/* ===== DROPDOWN MENU ===== */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  z-index: 5;
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  text-align: left;
+}
+
+.dropdown-content li {
+  padding: 0;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #2B364A;
+  padding: 0.6rem 1rem;
+  font-weight: 500;
+}
+
+.dropdown-content a:hover {
+  background-color: #F0F2F5;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Make dropdown mobile-friendly */
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem 0.5rem;
+  }
+  .navbar {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
     body {
       font-family: 'Montserrat', sans-serif;
       margin: 0;
@@ -101,6 +179,22 @@
   </style>
 </head>
 <body>
+  <nav>
+  <ul class="navbar">
+    <li class="dropdown">
+      <a href="#">Analytical Samples ▾</a>
+      <ul class="dropdown-content">
+        <li><a href="cba.html">CBA</a></li>
+        <li><a href="stata.html">STATA</a></li>
+        <li><a href="rstudio.html">RStudio</a></li>
+        <li><a href="excel.html">Excel</a></li>
+        <li><a href="winloss.html">Win-Loss</a></li>
+        <li><a href="production.html">Production Forecast</a></li>
+        <li><a href="market.html">Market Survey</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
   <header>
     <h1>Hi, I'm Macie Krankel</h1>
     <p>Economics Student @ University of Michigan | Data Analysis | Applied Economics | Market Research</p>
