@@ -24,7 +24,7 @@
       padding: 2rem 1rem;
     }
     header h1 {
-      color: white; /* Make your name clearly visible */
+      color: white;
       margin-bottom: 0.5rem;
     }
     main {
@@ -35,8 +35,17 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    h2, h3 {
+    h2 {
+      color: #2B364A;
+      font-size: 1.8rem;
+      margin-top: 2rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.3rem;
+    }
+    h3 {
       color: #53667F;
+      font-size: 1.3rem;
+      margin-top: 1.5rem;
     }
     strong {
       color: #455675;
@@ -58,6 +67,33 @@
     ul {
       margin-left: 1.5rem;
     }
+
+    /* Headshot next to About section */
+    .about-section {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .about-section img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    .about-text {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    @media (max-width: 600px) {
+      .about-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -67,23 +103,29 @@
   </header>
 
   <main>
-    <h2>A Little Bit About Me</h2>
+    <h2>About</h2>
 
-    <h3>Education</h3>
-    <p><strong>The University of Michigan</strong> (Ann Arbor, MI)<br>
-      B.S. Economics<br>
-      Graduating May 2027 (accelerated from May 2028)
-    </p>
-    <p><strong>Notre Dame Preparatory High School</strong> (Pontiac, MI)<br>
-      Valedictorian
-    </p>
+    <div class="about-section">
+      <!-- Replace 'headshot.jpg' with your actual uploaded filename -->
+      <img src="IMGA9883.jpeg" alt="Macie Krankel headshot">
+      <div class="about-text">
+        <h3>Education</h3>
+        <p><strong>The University of Michigan</strong> (Ann Arbor, MI)<br>
+          B.S. Economics<br>
+          Graduating May 2027 (accelerated from May 2028)
+        </p>
+        <p><strong>Notre Dame Preparatory High School</strong> (Pontiac, MI)<br>
+          Valedictorian
+        </p>
 
-    <h3>Professional Interests</h3>
-    <ul>
-      <li>Focused on data analysis, applied economics, and market research.</li>
-      <li>Experienced with R, Stata, and Excel — using data to answer policy and business questions.</li>
-      <li>3 years of experience in leasing, surveying Ann Arbor housing market trends and ordinances (booking $300K+ monthly in lease contracts).</li>
-    </ul>
+        <h3>Professional Interests</h3>
+        <ul>
+          <li>Focused on data analysis, applied economics, and market research.</li>
+          <li>Experienced with R, Stata, and Excel — using data to answer policy and business questions.</li>
+          <li>3 years of experience in leasing, surveying Ann Arbor housing market trends and ordinances (booking $300K+ monthly in lease contracts).</li>
+        </ul>
+      </div>
+    </div>
 
     <h2>Projects</h2>
     <ul>
@@ -105,7 +147,7 @@
       <strong>Languages:</strong> English (Native), Spanish (Intermediate)
     </p>
 
-    <h2>Say Hi</h2>
+    <h2 style="color:#2B364A;">Say Hi</h2>
     <p>
       <a href="https://www.linkedin.com/in/mkrankel/" target="_blank">LinkedIn</a><br>
       <a href="https://github.com/mkrank/analytical-portfolio" target="_blank">My Analytical Portfolio</a> — coming soon
@@ -113,7 +155,7 @@
   </main>
 
   <footer>
-    :)
-  <footer>
+    Copyright © 2025 Jaimie Krankel
+  </footer>
 </body>
 </html>
