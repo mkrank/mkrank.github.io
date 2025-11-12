@@ -3,54 +3,135 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Win-Loss Scenario Sample | Macie Krankel</title>
-
-  <!-- Favicon + Font -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <title>Macie Krankel | Portfolio</title>
+  <link rel="icon" href="favicon.ico?v=7" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico?v=7" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    body {
+    /* Remove white gap between header and nav */
+nav {
+  margin-bottom: 0;
+}
+
+header {
+  margin-top: 0;
+  padding-top: 1rem;     /* keeps the shorter header */
+  padding-bottom: 1rem;
+  border-top: none;
+}
+    /* ===== NAVIGATION BAR ===== */
+    nav {
       font-family: 'Montserrat', sans-serif;
-      background-color: #F0F2F5;
-      color: #2B364A;
+      letter-spacing: 0.3px;
+      background-color: #2B364A;
+      padding: 0.4rem 1rem;
+      text-align: left;
+      border-bottom: 2px solid #53667F;
+    }
+
+    .navbar {
+      list-style: none;
       margin: 0;
       padding: 0;
+      display: inline-flex;
+      gap: 1.5rem;
+    }
+
+    .navbar li { position: relative; }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 0.75rem;
+      transition: background 0.2s ease;
+    }
+
+    .navbar a:hover {
+      background-color: #53667F;
+      border-radius: 6px;
+    }
+
+    /* ===== DROPDOWN MENU ===== */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 200px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      z-index: 5;
+      border-radius: 8px;
+      padding: 0.5rem 0;
+      text-align: left;
+      list-style: none;
+      margin: 0;
+    }
+
+    .dropdown-content a {
+      display: block;
+      color: #2B364A;
+      padding: 0.6rem 1rem;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover { background-color: #F0F2F5; }
+
+    .dropdown:hover .dropdown-content { display: block; }
+
+    /* ===== BODY & HEADERS ===== */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #F0F2F5;
+      color: #222;
       line-height: 1.6;
     }
 
     header {
+      text-align: center;
       background-color: #53667F;
       color: white;
-      text-align: center;
-      padding: 2rem 1rem;
+      padding: 1.3rem 1rem; /* shortened header */
     }
 
     header h1 {
-      margin: 0;
+      color: white;
+      margin-bottom: 0.25rem;
       font-size: 1.8rem;
+    }
+
+    header p {
+      font-size: 0.95rem;
+      margin: 0;
     }
 
     main {
       max-width: 800px;
-      margin: 3rem auto;
+      margin: 2rem auto;
       background: white;
-      padding: 3rem;
+      padding: 2rem;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      text-align: center;
     }
 
     h2 {
-      color: #455675;
-      margin-bottom: 1rem;
+      color: #2B364A;
+      font-size: 1.8rem;
+      margin-top: 2rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.3rem;
     }
 
-    p {
-      font-size: 1.1rem;
+    h3 {
       color: #53667F;
-      font-weight: 600;
+      font-size: 1.3rem;
+      margin-top: 1.5rem;
     }
+
+    strong { color: #455675; }
 
     a {
       color: #53667F;
@@ -58,29 +139,86 @@
       font-weight: 600;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
+    a:hover { text-decoration: underline; }
 
     footer {
       text-align: center;
-      font-size: 0.8rem;
       color: #455675;
-      margin-top: 3rem;
-      padding-bottom: 1rem;
+      font-size: 0.6rem;
+      margin: 3rem 0 2rem;
+    }
+
+    ul { margin-left: 1.5rem; }
+
+    /* ===== EMAIL BOX ===== */
+    .email-box {
+      text-align: center;
+      margin: 1.5rem auto;
+    }
+
+    .email-link {
+      display: inline-block;
+      background-color: #53667F;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .email-link:hover {
+      background-color: #2B364A;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    /* ===== MOBILE ADAPT ===== */
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 0.5rem;
+      }
+      .navbar {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
     }
   </style>
 </head>
 
 <body>
+  <!-- ===== NAVIGATION ===== -->
+  <nav>
+    <ul class="navbar">
+      <li class="dropdown">
+        <a href="#">Analytical Portfolio ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cba.html">CBA</a></li>
+          <li><a href="stata.html">STATA</a></li>
+          <li><a href="rstudio.html">RStudio</a></li>
+          <li><a href="excel.html">Excel</a></li>
+          <li><a href="winloss.html">Win-Loss</a></li>
+          <li><a href="forecasting.html">Production Forecast</a></li>
+          <li><a href="market.html">Market Survey</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <!-- ===== HEADER ===== -->
   <header>
+    <h1>Hi, I'm Macie Krankel</h1>
+    <p>Economics Student @ University of Michigan | Data Analysis | Applied Economics | Market Research</p>
+    
     <h1>Win-Loss Scenario Sample</h1>
   </header>
-
-  <nav style="text-align:center; margin-top:1rem;">
-        <div class="email-box">
+  <nav style="text-align:center; margin-top:0rem;">
+    <div class="email-box">
   <a href="mailto:mkrank@umich.edu?subject=Portfolio%20Inquiry" class="email-link">
     Question? Email me
+  </a>
+</div>
   </nav>
 
   <main>
