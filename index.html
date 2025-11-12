@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Macie Krankel | Portfolio</title>
-
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <!-- Google Font: Montserrat -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
@@ -55,25 +55,28 @@
       text-decoration: none;
       font-weight: 600;
     }
-    a:hover { 
-      text-decoration: underline; 
-    }
+    a:hover { text-decoration: underline; }
     footer {
-      text-align: center;
+      text-align: left;
       color: #455675;
-      font-size: 0.9rem;
+      font-size: 0.6rem;
       margin: 3rem 0 1rem;
     }
     ul {
       margin-left: 1.5rem;
     }
 
-    /* Headshot next to About section */
+    /* ABOUT SECTION - image on right */
     .about-section {
       display: flex;
       align-items: flex-start;
+      justify-content: space-between;
       gap: 1.5rem;
       flex-wrap: wrap;
+    }
+    .about-text {
+      flex: 1;
+      min-width: 250px;
     }
     .about-section img {
       width: 150px;
@@ -81,17 +84,17 @@
       object-fit: cover;
       border-radius: 50%;
       box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-    .about-text {
-      flex: 1;
-      min-width: 250px;
+      margin-top: 0.5rem;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       .about-section {
         flex-direction: column;
         align-items: center;
         text-align: center;
+      }
+      .about-section img {
+        margin-top: 1rem;
       }
     }
   </style>
@@ -106,8 +109,6 @@
     <h2>About</h2>
 
     <div class="about-section">
-      <!-- Replace 'headshot.jpg' with your actual uploaded filename -->
-      <img src="IMGA9883.jpeg" alt="Macie Krankel headshot">
       <div class="about-text">
         <h3>Education</h3>
         <p><strong>The University of Michigan</strong> (Ann Arbor, MI)<br>
@@ -125,6 +126,9 @@
           <li>3 years of experience in leasing, surveying Ann Arbor housing market trends and ordinances (booking $300K+ monthly in lease contracts).</li>
         </ul>
       </div>
+
+      <!-- Replace filename with your actual uploaded image -->
+      <img src="IMGA9883.jpeg" alt="Macie Krankel headshot">
     </div>
 
     <h2>Projects</h2>
@@ -155,7 +159,7 @@
   </main>
 
   <footer>
-    Copyright © 2025 Jaimie Krankel
+    Copyright © 2025 Macie Krankel
   </footer>
 </body>
 </html>
