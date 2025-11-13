@@ -9,19 +9,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* Remove white gap between header and nav */
-nav {
-  margin-bottom: 0;
-}
 
-header {
-  margin-top: 0;
-  padding-top: 1rem;     /* keeps the shorter header */
-  padding-bottom: 1rem;
-  border-top: none;
-}
+    /* ===== GLOBAL ===== */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #F0F2F5;
+      color: #222;
+      line-height: 1.55;
+      font-size: 0.95rem; /* RESET body size to match other pages */
+    }
+
+    a {
+      color: #53667F;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover { text-decoration: underline; }
+
     /* ===== NAVIGATION BAR ===== */
     nav {
+      margin-bottom: 0;
       font-family: 'Montserrat', sans-serif;
       letter-spacing: 0.3px;
       background-color: #2B364A;
@@ -46,6 +55,7 @@ header {
       font-weight: 600;
       padding: 0.5rem 0.75rem;
       transition: background 0.2s ease;
+      font-size: 0.9rem; /* Matches other dropdown pages */
     }
 
     .navbar a:hover {
@@ -53,7 +63,7 @@ header {
       border-radius: 6px;
     }
 
-    /* ===== DROPDOWN MENU ===== */
+    /* ===== DROPDOWN ===== */
     .dropdown-content {
       display: none;
       position: absolute;
@@ -63,97 +73,44 @@ header {
       z-index: 5;
       border-radius: 8px;
       padding: 0.5rem 0;
-      text-align: left;
       list-style: none;
-      margin: 0;
     }
 
     .dropdown-content a {
       display: block;
       color: #2B364A;
-      padding: 0.6rem 1rem;
+      padding: 0.55rem 1rem;
       font-weight: 500;
-      text-decoration: none;
+      font-size: 0.9rem; /* match your other pages */
     }
 
     .dropdown-content a:hover { background-color: #F0F2F5; }
 
     .dropdown:hover .dropdown-content { display: block; }
 
-    /* ===== BODY & HEADERS ===== */
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #F0F2F5;
-      color: #222;
-      line-height: 1.6;
-    }
-
+    /* ===== HEADER ===== */
     header {
-      text-align: center;
+      margin-top: 0;
+      padding: 1rem 1rem 1.1rem;
       background-color: #53667F;
       color: white;
-      padding: 1.3rem 1rem; /* shortened header */
+      text-align: center;
     }
 
     header h1 {
-      color: white;
-      margin-bottom: 0.25rem;
-      font-size: 1.8rem;
+      margin: 0.2rem 0;
+      font-size: 1.55rem; /* matched size */
     }
 
     header p {
-      font-size: 0.95rem;
-      margin: 0;
+      font-size: 0.9rem;
+      margin-top: 0.3rem;
     }
 
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      color: #2B364A;
-      font-size: 1.8rem;
-      margin-top: 2rem;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 0.3rem;
-    }
-
-    h3 {
-      color: #53667F;
-      font-size: 1.3rem;
-      margin-top: 1.5rem;
-    }
-
-    strong { color: #455675; }
-
-    a {
-      color: #53667F;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    a:hover { text-decoration: underline; }
-
-    footer {
-      text-align: center;
-      color: #455675;
-      font-size: 0.6rem;
-      margin: 3rem 0 2rem;
-    }
-
-    ul { margin-left: 1.5rem; }
-
-    /* ===== EMAIL BOX ===== */
+    /* ===== EMAIL BUTTON ===== */
     .email-box {
       text-align: center;
-      margin: 1.5rem auto;
+      margin: 1.2rem auto 0;
     }
 
     .email-link {
@@ -161,33 +118,65 @@ header {
       background-color: #53667F;
       color: white;
       font-weight: 600;
-      text-decoration: none;
-      padding: 0.75rem 1.5rem;
+      padding: 0.65rem 1.4rem;
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
       transition: all 0.2s ease-in-out;
+      font-size: 0.9rem;
     }
 
     .email-link:hover {
       background-color: #2B364A;
       transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
-    /* ===== MOBILE ADAPT ===== */
-    @media (max-width: 768px) {
-      nav {
-        padding: 1rem 0.5rem;
-      }
-      .navbar {
-        flex-direction: column;
-        gap: 0.75rem;
-      }
+    /* ===== MAIN CONTENT CARD ===== */
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: white;
+      padding: 1.75rem 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+      font-size: 0.95rem; /* FIX large body text */
     }
+
+    h2 {
+      color: #2B364A;
+      font-size: 1.4rem;
+      margin-top: 0.5rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.25rem;
+    }
+
+    h3 {
+      color: #53667F;
+      font-size: 1.15rem;
+      margin-top: 1.4rem;
+    }
+
+    strong { color: #455675; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      color: #455675;
+      font-size: 0.65rem;
+      margin: 3rem 0 2rem;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 0.5rem; }
+      .navbar { flex-direction: column; gap: 0.75rem; }
+      main { padding: 1.3rem; }
+    }
+
   </style>
 </head>
 
 <body>
+
   <!-- ===== NAVIGATION ===== -->
   <nav>
     <ul class="navbar">
@@ -206,46 +195,49 @@ header {
       </li>
     </ul>
   </nav>
+
   <!-- ===== HEADER ===== -->
   <header>
     <h1>Hi, I'm Macie Krankel</h1>
     <p>Economics Student @ University of Michigan | Data Analysis | Applied Economics | Market Research</p>
-    
-    <h1>Stata Regression Analysis | Econ 251<h1/>
+
+    <h1>Stata Regression Analysis | Econ 251</h1>
   </header>
-  <nav style="text-align:center; margin-top:0rem;">
-    <div class="email-box">
-  <a href="mailto:mkrank@umich.edu?subject=Portfolio%20Inquiry" class="email-link">
-    Question? Email me
-  </a>
-</div>
-  </nav>
 
+  <!-- ===== EMAIL LINK ===== -->
+  <div class="email-box">
+    <a href="mailto:mkrank@umich.edu?subject=Portfolio%20Inquiry" class="email-link">
+      Question? Email me
+    </a>
+  </div>
+
+  <!-- ===== MAIN CONTENT ===== -->
   <main>
-  <h2>Econometric Modeling<h2/>
 
-  <p style="font-weight:600; color:#2B364A; margin-bottom:1rem;">
-    Regression Modeling and Interpretation in Microeconomics
-  </p>
+    <h2>Econometric Modeling</h2>
 
-  <p>
-    In this project I will use STATA to analyze how variables like apartment size, distance from campus, size of property,
-    and building age are factored to determine housing prices in the Ann Arbor housing market. 
-    I'll perform an OLS regression to estimate marginal effects and evalute price elasticity, 
-    identifying which housing traits most strongly drive rental and sale values.
-  </p>
+    <p style="font-weight:600; color:#2B364A;">
+      Regression Modeling and Interpretation in Microeconomics
+    </p>
 
-  <p>
-    Properties will be measured in average price per square foot.
-  </p>
+    <p>
+      In this project I will use STATA to analyze how variables like apartment size, distance from campus,
+      size of property, and building age affect housing prices in the Ann Arbor housing market.
+      I’ll perform an OLS regression to estimate marginal effects and evaluate price elasticity,
+      identifying which housing traits most strongly drive rental and sale values.
+    </p>
 
-  <p style="font-weight:600; color:#53667F; margin-top:2rem; text-align:center;">
-    visuals coming soon...
-  </p>
-</main>
+    <p>Properties are measured in average price per square foot.</p>
+
+    <p style="font-weight:600; color:#53667F; margin-top:2rem; text-align:center;">
+      visuals coming soon...
+    </p>
+
+  </main>
 
   <footer>
     © 2025 Macie Krankel
   </footer>
+
 </body>
 </html>
